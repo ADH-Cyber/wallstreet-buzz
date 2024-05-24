@@ -29,3 +29,4 @@ with open(".env", "w") as f:
     f.write(f"USER_AGENT={user_agent}\n")
     f.write(f"USERNAME={username}\n")
     f.write(f"PASSWORD={password}\n")
+    f.write(f"MAX_POSTS=10\n")
