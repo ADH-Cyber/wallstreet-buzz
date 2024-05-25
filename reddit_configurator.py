@@ -1,28 +1,51 @@
+#!/usr/bin/env python
+'''
+Logic for securely gathering sensitive information from the user and writing
+it to a .env file for use in the WallStreetBuzz application.
+
+This module prompts the user for their Reddit API credentials and other
+necessary configuration parameters, then writes these values to a .env file.
+'''
+
+# Built-in/Generic Imports
 import os
+
+__author__ = 'Austin Howard'
+__copyright__ = 'Copyright 2024, wallstreet-buzz'
+__credits__ = ['Austin Howard']
+__license__ = 'MIT'
+__version__ = '0.1.1'
+__maintainer__ = 'Austin Howard'
+__email__ = 'austin.d.howard@proton.me'
+__status__ = 'prototype'
+
 
 # Function to securely get sensitive information from user
 def get_sensitive_info(prompt):
+    """
+    Prompts the user for sensitive information and ensures the input is not
+    empty.
+
+    Args:
+        prompt (str): The prompt message displayed to the user.
+
+    Returns:
+        str: The user's input.
+    """
     while True:
         value = input(prompt)
         if value.strip():  # Check if input is not empty
             return value
 
-# Your client ID
+
+# Gather information from input
 client_id = get_sensitive_info("Enter your client ID: ")
-
-# Your client secret
 client_secret = get_sensitive_info("Enter your client secret: ")
-
-# Your user agent
 user_agent = get_sensitive_info("Enter your user agent: ")
-
-# Your Reddit username
 username = get_sensitive_info("Enter your Reddit username: ")
-
-# Your Reddit password
 password = get_sensitive_info("Enter your Reddit password: ")
 
-# Write the sensitive information to a .env file
+# Write information to a .env file
 with open(".env", "w") as f:
     f.write(f"CLIENT_ID={client_id}\n")
     f.write(f"CLIENT_SECRET={client_secret}\n")

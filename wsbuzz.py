@@ -1,11 +1,33 @@
-import os
-import praw
-import re
-import yfinance as yf
+#!/usr/bin/env python
+'''
+Logic for gathering and plotting stock mentions from WallStreetBets posts into
+graphs.
+
+This module retrieves hot posts from the WallStreetBets subreddit,
+identifies mentioned stock tickers, fetches their historical data for the last
+30 days, and plots this data into graphs.
+'''
+
+# Built-in/Generic Imports
 import logging
-import matplotlib.pyplot as plt
+import os
+import re
 from datetime import datetime, timedelta
+
+# Libs
+import matplotlib.pyplot as plt
+import praw
+import yfinance as yf
 from dotenv import load_dotenv
+
+__author__ = 'Austin Howard'
+__copyright__ = 'Copyright 2024, wallstreet-buzz'
+__credits__ = ['Austin Howard']
+__license__ = 'MIT'
+__version__ = '0.1.1'
+__maintainer__ = 'Austin Howard'
+__email__ = 'austin.d.howard@proton.me'
+__status__ = 'prototype'
 
 
 def setup_logging():
@@ -53,6 +75,12 @@ def get_reddit_posts(logger):
     Retrieves hot posts from the 'wallstreetbets' subreddit.
     Logs the number of posts retrieved.
     Returns a list of posts with relevant details.
+
+    Args:
+        logger (logging.Logger): Logger instance for logging information.
+
+    Returns:
+        list: List of dictionaries containing post details.
     """
     # Load environment variables from .env file
     load_dotenv()
@@ -92,6 +120,12 @@ def graph_stock_data(ticker, start_date_str, logger):
     Fetches historical stock data for the given ticker and date range.
     Creates and saves a plot of the closing prices for the last 30 days.
     Logs the success or any errors that occur.
+
+    Args:
+        ticker (str): Stock ticker symbol.
+        start_date_str (str): Start date for fetching historical data in
+        'YYYY-MM-DD' format.
+        logger (logging.Logger): Logger instance for logging information.
     """
     try:
         # Fetch historical stock data for the last 30 days
