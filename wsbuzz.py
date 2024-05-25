@@ -21,7 +21,7 @@ import yfinance as yf
 from dotenv import load_dotenv
 
 __author__ = 'Austin Howard'
-__copyright__ = 'Copyright 2024, wallstreet-buzz'
+__copyright__ = 'Copyright 2024, Wallstreet Buzz'
 __credits__ = ['Austin Howard']
 __license__ = 'MIT'
 __version__ = '0.1.1'
