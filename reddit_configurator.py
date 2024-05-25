@@ -7,9 +7,6 @@ This module prompts the user for their Reddit API credentials and other
 necessary configuration parameters, then writes these values to a .env file.
 '''
 
-# Built-in/Generic Imports
-import os
-
 __author__ = 'Austin Howard'
 __copyright__ = 'Copyright 2024, Wallstreet Buzz'
 __credits__ = ['Austin Howard']

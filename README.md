@@ -10,6 +10,9 @@ Step 5: Run ```python reddit_configurator.py```
 
 ## Resources
 ### Reference Material
+* [Semver](https://semver.org/): How to use semantic versioning
+* [Git](https://git-scm.com/book/en/v2/Git-Basics-Tagging): Basic Tagging
+
 ### Special Thanks
 * [Jason Zeller](https://www.fhsu.edu/informatics/faculty-and-staff/Jason-Zeller/): 
 Continuous inspiration, knowledge, and support
