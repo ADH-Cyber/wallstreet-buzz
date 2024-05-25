@@ -30,3 +30,5 @@ with open(".env", "w") as f:
     f.write(f"USERNAME={username}\n")
     f.write(f"PASSWORD={password}\n")
     f.write(f"MAX_POSTS=10\n")
+    f.write(f"LOGGING_LEVEL=INFO\n")
+    f.write(f"CONSOLE_LOGGING=True")
